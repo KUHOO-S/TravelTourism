@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Ticket Scanner',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
         home: MyHomePage(title: 'Ticket Scanner'),
         routes: <String, WidgetBuilder>{
