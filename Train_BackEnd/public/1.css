@@ -68,9 +68,7 @@ table{
 
 .key{
     border:solid 2px #eee;
-    position: relative;
-    top:-90px;
-    left: 1050px;
+
 }
 
 .dropdown.dropdown-lg .dropdown-menu {
