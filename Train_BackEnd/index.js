@@ -6,14 +6,18 @@ const express = require('express');
 const app = express();
 let ejs = require('ejs');
 const setup = require('./tools/setup');
+const Seat = require('./models/seats.model');
 
 var seats = setup.seats;
 const mappings = setup.mappings;
+const randomize = setup.randomize;
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.get('/trains/:trainNo',(req,res)=>{
+app.get('/trains/:trainNo', (req, res)=>{
+    seats = [];
+    randomize(seats);
     const trainNo = req.params.trainNo;
     res.render('./table.ejs', {trainNo});
 });
@@ -36,7 +40,12 @@ app.get('/trains/:trainNo/:aNo/:status/mark', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.redirect('/trains/123');
+    res.redirect('/trains/121');
+});
+
+app.get('/passengers', async (req, res) => {
+    const a = await Seat.find({});
+    res.send(a);
 });
 
 app.listen(process.env.PORT || 3000, () => {
