@@ -47,6 +47,10 @@ app.get('/trains/:trainNo/:aNo/:status/mark', (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.redirect('/trains/123');
+});
+
 app.listen(process.env.PORT || 3000, () => {
     console.log("Server is running");
 })
