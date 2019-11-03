@@ -16,6 +16,8 @@
     font-size: 1.4em;
     color: white;
     font-weight: bolder;
+    /* font-style: italic; */
+    letter-spacing: 1.2px;
 }
 
 .navbar-nav>li>a {
@@ -36,12 +38,14 @@
 
 .navbar-inverse .navbar-nav>li>a {
     color: white;
+    box-shadow: 1px 1px 9px -1px rgba(63, 63, 63, 0.171);
 
 }
 
 
 #number{
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: bolder;
 }
 body{
     background: #C3D1F5;
@@ -67,8 +71,10 @@ table{
 }
 
 .key{
-    border:solid 2px #eee;
-
+    padding: 1rem;
+    background-color: #eee;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 9px -1px rgb(202, 202, 202);
 }
 
 .dropdown.dropdown-lg .dropdown-menu {
