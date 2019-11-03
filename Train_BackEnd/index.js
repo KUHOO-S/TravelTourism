@@ -1,7 +1,10 @@
+// Connect to MongoDB instance
+require('./models/db');
+
+// Require express and ejs
 var express = require('express');
 var app = express();
 let ejs = require('ejs');
-
 
 var seats = [];
 for (let i = 0; i < 105; i++) {
@@ -19,7 +22,6 @@ const mappings = {
 	'669279913306': 5
 }
 
-// vacant, occupied or unbooked
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
@@ -45,6 +47,6 @@ app.get('/trains/:trainNo/:aNo/:status/mark', (req, res) => {
     }
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is running");
 })
