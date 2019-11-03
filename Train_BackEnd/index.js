@@ -39,13 +39,13 @@ app.get('/trains/:trainNo/:aNo/:status/mark', (req, res) => {
     }
 });
 
-app.get('/', (req, res) => {
-    res.redirect('/trains/121');
-});
-
 app.get('/passengers', async (req, res) => {
     const a = await Seat.find({});
     res.send(a);
+});
+
+app.get('/', (req, res) => {
+    res.redirect('/trains/121');
 });
 
 app.listen(process.env.PORT || 3000, () => {
