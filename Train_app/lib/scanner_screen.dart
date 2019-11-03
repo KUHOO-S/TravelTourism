@@ -78,7 +78,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
       var parsed = xml.parse(barcode);
       var uid = parsed.findElements('PrintLetterBarcodeData').single.getAttribute('uid');
       print(uid);
-      var url = 'http://ctf-xp.csivit.com:3012/trains/123/$uid/occupied/mark';
+      var url = 'http://webtech-hack.herokuapp.com/trains/123/$uid/occupied/mark';
       var response = await http.get(url);
       print(response.body);
       if (response.body == 'invalid') {
