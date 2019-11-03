@@ -2,25 +2,13 @@
 require('./models/db');
 
 // Require express and ejs
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 let ejs = require('ejs');
+const setup = require('./tools/setup');
 
-var seats = [];
-for (let i = 0; i < 105; i++) {
-    seats.push('vacant');
-}
-
-for (let i = 0; i < 20; i++) {
-    const num = Math.floor(Math.random() * 105);
-    if (!(num > 0 && num < 10)) {
-    	seats[num] = 'occupied';
-    }
-}
-
-const mappings = {
-	'669279913306': 5
-}
+var seats = setup.seats;
+const mappings = setup.mappings;
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
