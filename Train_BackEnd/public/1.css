@@ -1,0 +1,31 @@
+#number{
+    font-size: 30px;
+}
+body{
+    background: #eee;
+}
+
+td{
+    text-align: center;
+    background:#56BE75;
+}
+
+#train{
+    display: block;
+    text-align:center;
+}
+
+td:hover{
+    background: #8AA6BE;
+}
+
+table{
+    margin-top:60px;
+}
+
+.key{
+    border:solid 2px #eee;
+    position: relative;
+    top:-90px;
+    left: 1050px;
+}
