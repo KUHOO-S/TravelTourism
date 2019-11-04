@@ -1,14 +1,18 @@
 var seats = [];
-for (let i = 0; i < 105; i++) {
-    seats.push('vacant');
-}
 
-for (let i = 0; i < 20; i++) {
-    const num = Math.floor(Math.random() * 105);
-    if (!(num > 0 && num < 10)) {
-    	seats[num] = 'occupied';
+function randomize(a) {
+    for (let i = 0; i < 105; i++) {
+        a.push('vacant');
+    }
+    for (let i = 0; i < 20; i++) {
+        const num = Math.floor(Math.random() * 105);
+        if (!(num > 0 && num < 10)) {
+            a[num] = 'occupied';
+        }
     }
 }
+
+randomize(seats);
 
 const mappings = {
     '669279913306': 5,
@@ -17,5 +21,6 @@ const mappings = {
 
 module.exports = {
     seats,
-    mappings
+    mappings,
+    randomize,
 }
