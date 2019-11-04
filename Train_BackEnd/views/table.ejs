@@ -39,17 +39,17 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-              <div class="input-group" id="adv-search">
-                  <input type="text" class="form-control" placeholder="Enter Train no" id="train-input"/>
-                  <div class="input-group-btn">
-                      <div class="btn-group" role="group">
+        <div class="input-group" id="adv-search">
+          <input type="text" class="form-control" placeholder="Enter Train no" id="train-input" />
+          <div class="input-group-btn">
+            <div class="btn-group" role="group">
 
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true" onclick="redirectTrain()"></span></button>
-                      </div>
-                  </div>
-              </div>
+              <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"
+                  aria-hidden="true" onclick="redirectTrain()"></span></button>
             </div>
           </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -62,7 +62,7 @@
       </div>
     </div>
 
-<br>
+    <br>
 
     <div class="key">
 
@@ -100,10 +100,10 @@
   table_body += '</table>';
   $('.table-container').html(table_body);
 
-  function redirectTrain () {
+  function redirectTrain() {
     const input = $("#train-input").val();
     console.log(input);
-    window.location.href=`/trains/${input}`;
+    window.location.href = `/trains/${input}`;
   }
 
   function httpGetAsync(theUrl, callback) {
